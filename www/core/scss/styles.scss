@@ -16,9 +16,20 @@
  */
 
 // Bar content.
-$bar-content-bg: #f70 !default;
+$bar-content-bg: #2568B2 !default;
 $bar-content-border: transparent !default;
 $bar-content-text: #fff !default;
+
+.item-icon-left .icon::before, .item-icon-right .icon::before, .item.item-howto.item-icon-right .icon::before {
+    color: #138DB1 !important;
+}
+
+.item.mm-course-handlers {
+    background-color: #F6EC13;
+}
+.item.mm-course-handlers .tabs {
+    background: #F6EC13 none repeat scroll 0 0 !important;
+}
 
 // Small avatar ideal for icons.
 $item-media-width: 32px !default;
