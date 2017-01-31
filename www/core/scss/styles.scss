@@ -16,19 +16,41 @@
  */
 
 // Bar content.
-$bar-content-bg: #2568B2 !default;
+$bar-content-bg: #A9B1B3 !default;
 $bar-content-border: transparent !default;
 $bar-content-text: #fff !default;
 
 .item-icon-left .icon::before, .item-icon-right .icon::before, .item.item-howto.item-icon-right .icon::before {
-    color: #138DB1 !important;
+    color: #B9BBAD !important;
 }
 
 .item.mm-course-handlers {
-    background-color: #F6EC13;
+    background-color: #FFF;
 }
 .item.mm-course-handlers .tabs {
-    background: #F6EC13 none repeat scroll 0 0 !important;
+    background: #FFF none repeat scroll 0 0 !important;
+}
+
+.mm-site_mm_courses .item h2, .mm-site_mm_courses .item .item-heading {
+    text-align: center;
+    color: #fff;
+}
+
+.mm-site_mm_courses .mm-course-handlers .ion-stats-bars,  .mm-site_mm_courses .mm-course-handlers .ion-person-stalker {
+  color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke: 1.2px #B2B3AB;
+}
+.mm-site_mm_courses .mm-course-handlers .ion-ribbon-a, .mm-site_mm_courses .mm-course-handlers  .ion-ios-list, .mm-site_mm_courses .mm-course-handlers  .ion-android-checkbox-outline {
+  color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke: 1.2px #B2B3AB;
+}
+
+.mm-site_mm_courses .item-icon-right .card .item:first-child, .mm-site_mm_courses .item-icon-right .list-inset .item:first-child, .padding > .list .item:first-child {
+  //background-color:  #B2B3AB;
+}
+
+.item-message-mine {
+    background-color: #dae2e4 !important;
 }
 
 // Small avatar ideal for icons.
