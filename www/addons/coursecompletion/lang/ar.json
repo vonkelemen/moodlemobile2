@@ -1,10 +1,10 @@
 {
     "complete": "مكتمل",
-    "completecourse": "مقرر مكتمل",
-    "completed": "تم إكمال المقرر",
-    "completiondate": "تاريخ إكمال المقرر",
-    "couldnotloadreport": "لا يمكن تحميل تقرير إكمال المقرر، الرجاء المحاولة في وقت آخر",
-    "coursecompletion": "إكمال المقرر",
+    "completecourse": "مادة مكتملة",
+    "completed": "تم إكمال المادة",
+    "completiondate": "تاريخ إكمال المادة",
+    "couldnotloadreport": "للا يمكن تحميل تقرير إكمال المادة ، الرجاء المحاولة في وقت آخر",
+    "coursecompletion": "إكمال المادة",
     "criteria": "المعايير",
     "criteriagroup": "معايير المجموعة",
     "criteriarequiredall": "كل المعايير في الأسفل مطلوبة",
@@ -17,5 +17,5 @@
     "requiredcriteria": "المعايير المطلوبة",
     "requirement": "المتطلبات",
     "status": "الحالة",
-    "viewcoursereport": "عرض تقرير المقرر"
+    "viewcoursereport": "عرض تقرير المادة"
 }

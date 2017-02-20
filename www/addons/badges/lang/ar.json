@@ -1,3 +1,12 @@
 {
-    "badges": "شارات"
+    "badgedetails": "تفاصيل الأوسمة",
+	"badges": "الأوسمة",
+	"dateawarded": "تاريخ المنح",
+    "expirydate": "تاريخ الإنتهاء",
+    "contact": "اتصال",
+    "issuancedetails": "تفاصيل ",
+    "issuerdetails": "تفاصيل مانح الوسام",
+    "issuername": "اسم مانح الوسام",
+    "nobadges": "لاتوجد أوسمة متوفرة",
+    "recipientdetails": "تفاصيل مستلم الوسام"
 }

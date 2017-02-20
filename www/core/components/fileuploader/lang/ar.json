@@ -11,5 +11,15 @@
     "readingfile": "يتم قراءة الملف",
     "uploadafile": "إرفع ملف",
     "uploading": "يتم الرفع",
-    "video": "فيديو"
+    "video": "فيديو",
+	"addfiletext": "أضف ملف",
+    "confirmuploadfile": "ستقوم بتحميل ملف حجمه {{size}}. هل فعلا تريد إكمال التحميل؟",
+    "confirmuploadunknownsize": "لايمكن احتساب حجم الملف هل فعلا تريد إكمال التحميل؟",
+    "errorgettingimagealbum": "حدث خطأ أثناء فتح صورة من الالبوم",
+    "errornoapp": "لايوجد لديك تطبيقات مثبتة لتنفيذ هذا الاجراء.",
+    "errorwhileuploading": "حدث خطأ أثناء رفع الملف",
+    "maxbytesfile": "الملف {{$a.file}} كبير جدا. أقصى حجم ممكن تحمله هو: {{$a.size}}.",
+    "photoalbums": "معرض الصور",
+    "selectafile": "إختر ملف",
+    "uploadingperc": "تحميل: {{$a}}%"
 }

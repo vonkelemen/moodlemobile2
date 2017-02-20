@@ -1,7 +1,20 @@
 {
-    "allsections": "كل الأقسام",
+    "activitynotyetviewableinapp": "نعمل على الدعم الفني لهذا {{$a}} النشاط",
+    "activitynotyetviewableremoteaddon": "الإدارة الخاصة بك قامت بتركيب ملحق غير مدعوم إلى الآن.",
+    "activitynotyetviewablesiteupgradeneeded": "النظام التعليمي بحاجة إلى تحديث",
+	"allsections": "كل الأقسام",
+	"askadmintosupport": "تواصل مع إدارة النظام بخصوص رغبتك باستخدام هذا النشاط ضمن التطبيق.",
+    "confirmdeletemodulefiles": "هل أنت متأكد من حذف ملفات هذا الملحق؟",
+    "confirmdownload": "ستقوم بتحميل  {{size}} . هل أنت متأكد من إكمال التحميل؟",
+    "confirmdownloadunknownsize": "لايمكننا من احتساب حجم الملف ، هل أنت متأكد من أنك تريد التحميل؟",
+    "confirmpartialdownloadsize": "ستقوم بتحميل <strong>على الأقل</strong> {{size}}. هل فعلا تريد إكمال التحميل؟",
     "contents": "المحتويات",
     "couldnotloadsections": "لم يتم تحميل كل الأقسام، من فضلك حاول مرة أخرى لاحقاَ",
+	"couldnotloadsectioncontent": "لايمكن تحميل محتوى الأقسام ، فضلا حاول مرة أخرى",
     "errordownloadingsection": "خطأ عن تنزيل الأقسام",
+	"errorgetmodule": "حدث خطأ أثناء استخراج بيانات الملحق",
+    "nocontentavailable": "المحتوى غير متوفر في هذه اللحظة",
+    "overriddennotice": "آخر درجة لك في هذا النشاط عدل يدوياً",
+    "useactivityonbrowser": "لاتزال تستطيع استخدام المستعرض الخاص بجهازك",
     "showall": "عرض الكل"
 }

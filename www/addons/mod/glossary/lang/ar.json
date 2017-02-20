@@ -1,5 +1,12 @@
 {
-    "browsemode": "النمط العرضي",
+    "byalphabet": "هجائي",
+    "entrypendingapproval": "هذه الاضافة معلقة للموافقة",
+    "errorloadingentries": "حدث خطأ أثناء تحميل المدخلات",
+    "errorloadingentry": "حدث خطأ أثناء تحميل المدخل",
+    "errorloadingglossary": "حدث خطأ أثناء تحميل القاموس",
+    "noentriesfound": "لم يتم إيجاد أي مدخل",
+    "searchquery": "البحث",
+	"browsemode": "النمط العرضي",
     "byauthor": "التجميع طبقا للمؤلف",
     "bynewestfirst": "الأحدث أولا",
     "byrecentlyupdated": "تم تحديثه مؤخرا",

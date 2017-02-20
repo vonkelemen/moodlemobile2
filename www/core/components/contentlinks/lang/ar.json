@@ -1,3 +1,7 @@
 {
-    "chooseaccount": "أختر الحساب"
+    "chooseaccount": "أختر الحساب",
+	"chooseaccounttoopenlink": "اختر الحساب لفتح الرابط الخاص به",
+	"confirmurlothersite": "هذا الرابط يؤدي إلى موقع اخر هل تريد فتحه؟",
+	"errornoactions": "لايمكن العثور على إجراء للعمل مع هذا الرابط",
+	"errornosites": "لايمكن العثور على أي موقع لمعالجة هذا الرابط"
 }

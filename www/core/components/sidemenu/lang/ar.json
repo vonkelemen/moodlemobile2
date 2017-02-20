@@ -3,6 +3,7 @@
     "changesite": "الخروج",
     "help": "مساعدة",
     "logout": "الخروج",
-    "mycourses": "مقرراتي",
-    "website": "الموقع"
+    "mycourses": "موادي",
+    "website": "الموقع",
+	"togglemenu": "تبديل القائمة"
 }

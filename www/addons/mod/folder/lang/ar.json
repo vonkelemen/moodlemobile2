@@ -1,3 +1,4 @@
 {
-    "emptyfilelist": "لا يوجد أي ملفات ليتم إظهارها"
+    "emptyfilelist": "لا يوجد أي ملفات ليتم إظهارها",
+	"errorwhilegettingfolder": "حدث خطأ اثناء تحميل بيانات المجلد"
 }

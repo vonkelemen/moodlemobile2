@@ -3,5 +3,8 @@
     "ifoundthat": "وجدت أن",
     "ipreferthat": "أفضل أن",
     "responses": "إجابات",
-    "results": "النتائج"
+    "results": "النتائج",
+	"cannotsubmitsurvey": "نأسف لديك مشكلة في الإرسال حاول مرة أخرى.",
+	"errorgetsurvey": "حصل خطأ في بيانات الإستبيان.",
+	"surveycompletednograph": "يجب أن تكمل هذا الإستبيان."
 }

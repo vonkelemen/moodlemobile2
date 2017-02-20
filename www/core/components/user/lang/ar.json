@@ -1,7 +1,8 @@
 {
-    "address": "العنوان",
+    "detailsnotavailable": "تفاصيل هذا المستخدم غير متاح لك.",
+	"address": "العنوان",
     "city": "المدنية",
-    "contact": "جهة اتصال",
+    "contact": "الاتصال",
     "country": "الدولة",
     "description": "الوصف",
     "details": "التفاصيل",
@@ -19,5 +20,6 @@
     "roles": "أدورا",
     "student": "طالب",
     "viewprofile": "عرض الحساب",
+	"teacher": "معلم العرض فقط",
     "webpage": "صفحة إنترنت"
 }

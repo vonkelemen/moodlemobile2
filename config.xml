@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="lms6.com.elinjaz" version="3.3.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="lms6.com.elinjaz" version="3.3.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Elinjaz</name>
   <description>Elinjaz LMS Mobile app</description>
   <author href="http://moodle.com" email="moodledman@gmail.com">Manolescu Dorel</author>
