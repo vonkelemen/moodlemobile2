@@ -59,6 +59,9 @@ $mm-input-required-asterisk-color: #ff4136 !default;
 // Item padding.
 $item-input-padding: 16px !default;
 
+// Rich text editor.
+$mm-rte-min-height: 80px !default;
+
 /**
  * App Branding
  */
@@ -134,23 +137,38 @@ em {
   }
 }
 
-.item.item-text-wrap .item-heading {
+.item.item-text-wrap .item-heading,
+p.item-text-wrap {
   overflow: visible;
   white-space: normal;
+}
+
+.item h1:first-child,
+.item h2:first-child,
+.item .item-heading:first-child,
+.item h3:first-child,
+.item h4:first-child,
+.item h5:first-child,
+.item h6:first-child,
+.item p:first-child {
+    margin-top: 0;
 }
 
 // More options for grids.
 .col-65 {
   @include flex(0, 0, 65%);
   max-width: 65%;
+  width: 65%;
 }
 .col-60 {
   @include flex(0, 0, 60%);
+  width: 60%;
   max-width: 60%;
 }
 .col-40 {
   @include flex(0, 0, 40%);
   max-width: 40%;
+  width: 40%;
 }
 
 // Media item, ideal for icons.
@@ -215,7 +233,7 @@ em {
   }
 
   mm-format-text > p:only-child {
-    display: inline-block;
+    display: inline;
   }
 }
 
@@ -251,8 +269,12 @@ em {
 
 // Defines a "disabled" item.
 .item.item-disabled,
+.item-toggle[disabled],
 .platform-android .item.item-disabled {
   color: $item-disabled-color;
+  h2 {
+    color: $item-disabled-color;
+  }
 }
 
 // Avoid adding too much padding.
@@ -275,10 +297,10 @@ em {
     &.item-complex .item-content > img:first-child,
     img.avatar {
         position: static;
-        width: 100px;
-        height: 100px;
-        max-width: 100px;
-        max-height: 100px;
+        width: 90px;
+        height: 90px;
+        max-width: 90px;
+        max-height: 90px;
         margin-bottom: 10px;
         border-radius : 50%;
         padding: 4px;
@@ -378,7 +400,7 @@ em {
   .spinner {
     position: absolute;
     right: $button-padding;
-    padding-top: floor(($button-height + ($button-border-width * 2) + 1 - 28) / 2);
+    padding-top: 0;
     line-height: 28px;
   }
 }
@@ -515,7 +537,9 @@ mm-loading.mm-loading-center {
 .mm-media-adapt-width {
   max-width: 100%;
 }
-img.mm-media-adapt-width {
+
+.mm-enabled-media-adapt img.mm-media-adapt-width,
+img.mm-media-adapt-width-enabled {
   height: auto;
 }
 
@@ -560,7 +584,7 @@ mm-navigation-bar {
 
 // When using .item and .row in the same element, .row's padding prevails. Use this class to keep .item's padding.
 .item.row.mm-item-padding {
-  padding: $item-padding;
+  padding: $item-padding / 2;
 }
 
 p.mm-error {
@@ -573,10 +597,25 @@ p.mm-error {
   box-shadow: $card-box-shadow;
   margin: 20px 10px;
   background-color: #fff;
+  position: relative;
+  padding-left: $item-padding * 3;
+  text-align: left;
 
-  i.icon:before {
-      color: $mm-warning-color;
-      font-size: 125%;
+  i.icon {
+    @include display-flex();
+    @include align-items(center);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    font-size: ceil(($item-icon-font-size / 4) * 3);
+    left: ceil($item-padding / 4);
+    color: $mm-warning-color;
+
+    &:before {
+      display: block;
+      width: ceil(($item-icon-font-size / 4) * 3);
+      text-align: center;
+    }
   }
 }
 
@@ -609,6 +648,10 @@ p.mm-error {
   height: auto;
   width: auto;
   position: absolute !important; // Position fixed causes problems in Android 4.1-4.3.
+}
+
+.mm-zoom-pane {
+  height: 100%;
 }
 
 .mm-has-navigation-bar {
@@ -666,6 +709,39 @@ mm-timer {
 
 .popover.mm-context-menu {
   width: 320px;
+  max-width: 100%;
+}
+
+.popup-container .popup-title
+
+
+.mm-icon-with-badge {
+  position: relative;
+
+  .icon {
+    font-size: $button-large-icon-size;
+  }
+
+  .mm-icon-badge {
+    width: auto;
+    height: auto;
+    margin: 0;
+    position: absolute;
+    top: -18px;
+    right: -8px;
+    color: red;
+    font-size: $button-large-icon-size / 2;
+  }
+}
+
+.popup-container.mm-nohead .popup-head {
+  display: none;
+}
+
+.popup-container.mm-bigpopup .popup {
+  width: 90%; // Fallback of calc.
+  width: calc(100% - 20px);
+  max-width: none;
 }
 
 // Inline icons and inputs.
@@ -710,6 +786,28 @@ mm-timer {
   }
 }
 
+.item-select .mm-select-fix {
+  // Taken from .item-select select.
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0 ($item-padding * 3) 0 $item-padding;
+  max-width: 65%;
+  width: 100%;
+  border: none;
+  background: $item-default-bg;
+  color: #333;
+  text-indent: .01px;
+  white-space: nowrap;
+  font-size: $font-size-base;
+  cursor: pointer;
+  direction: rtl; // right align the select text
+
+  pointer-events: none;
+}
+
+
 .item-input-inset .item-input-wrapper input,
 .item-input .item-input-wrapper input {
   width: 100%;
@@ -722,6 +820,21 @@ mm-timer {
 
   .icon:before {
     font-size: $mm-button-icon-small-height;
+  }
+}
+
+// Increase size for buttons with only an icon inside.
+.button.icon {
+  &:before {
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 30px;
+  }
+
+  &.button-small:before {
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 20px;
   }
 }
 
@@ -766,14 +879,50 @@ mm-timer {
   padding-right: 0;
 }
 
-.item.mm-course-handlers {
+.item.mm-not-clickable {
+  cursor: default;
+
+  &[ng-click]:hover {
+    cursor: default;
+  }
+
+  &.activated {
+    border-color: $item-default-border;
+    background-color: $item-default-bg;
+  }
+}
+
+.item.mm-tab-handlers,
+.mm-tab-handlers {
   padding: 6px 2px;
 
   .tabs {
     background: white;
+    border: 0;
+  }
+  .tabs-icon-round {
+    color: $positive;
+
+    .tab-item.activated {
+      opacity: 0.7;
+    }
+
+    .icon {
+      border-radius: 50%;
+      max-width: 32px;
+      font-size: 22px;
+      line-height: 32px;
+      color: white;
+      background-color: $positive;
+      margin-bottom: 5px;
+
+      &:before {
+        line-height: 32px;
+      }
+    }
   }
 
-  .mm-loading-course-handlers {
+  .mm-loading-handlers {
     padding: 7px;
     padding-bottom: 6px;
   }
@@ -820,6 +969,7 @@ mm-timer {
   }
   &:not([mm-auto-rows]) {
     height: 200px;
+    min-height: $mm-rte-min-height;
   }
 }
 
@@ -828,11 +978,15 @@ mm-timer {
 }
 
 .item.mm-item-has-rich-text-editor {
+  &.item-input {
+    padding: 0;
+  }
   padding: 0;
   display: block;
 
   .input-label, .mm-textarea {
     padding-left: $item-padding;
+    padding-top: $item-padding/2;
   }
 }
 
@@ -860,6 +1014,10 @@ mm-timer {
   textarea.cke_source {
     padding: 20px;
     box-sizing: border-box;
+  }
+
+  .cke_contents {
+    min-height: $mm-rte-min-height;
   }
 }
 
@@ -1016,6 +1174,21 @@ mm-timer {
   }
 }
 
+.mm-toast {
+  pointer-events: none;
+  bottom: 100px;
+  -ms-flex-align: flex-end;
+  -webkit-align-items: flex-end;
+  -moz-align-items: flex-end;
+  align-items: flex-end;
+
+  .loading {
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin: 0 10px;
+  }
+}
+
 @media only screen and (max-width: 400px) {
   .mm-inapp-notification-backdrop .mm-inapp-notification {
     margin-left: 6px !important;
@@ -1076,6 +1249,17 @@ ion-spinner.mm-spinner-right {
 
   .toggle {
     top: 0;
+  }
+}
+
+.card .item-border,
+.item-border {
+  &:first-child {
+    border-top: $item-border-width solid $item-light-border;
+  }
+
+  &:last-child {
+    border-bottom: $item-border-width solid $item-light-border;
   }
 }
 
@@ -1153,16 +1337,22 @@ i, cite, em, var, address, dfn {
 .list-inset .item,
 .padding > .list .item,
 .padding-horizontal > .list .item {
-  &.item-input .mm-show-password-container {
-    padding: 0px;
-    width: 100%;
+
+  &.item-input {
+    padding-right: $item-padding;
 
     input {
       padding-right: 0px;
     }
-    .button {
-      margin-left: ($item-padding / 3) * 2;
-      padding: 0 $button-clear-padding;
+
+    .mm-show-password-container {
+      padding: 0px;
+      width: 100%;
+
+      .button {
+        margin-left: ($item-padding / 3) * 2;
+        padding: 0 $button-clear-padding;
+      }
     }
   }
 }
@@ -1203,6 +1393,7 @@ mm-format-text[max-height], *[mm-format-text][max-height] {
   display: block;
   position: relative;
   width: 100%;
+  overflow: hidden;
 
   /* Force display inline */
   &.inline {
@@ -1236,6 +1427,8 @@ mm-format-text[max-height], *[mm-format-text][max-height] {
         bottom: 0;
         right: 0;
         z-index: 1001;
+        background-color: white;
+        padding-left: 10px;
 
         &:after {
           @extend .ion;
@@ -1243,6 +1436,10 @@ mm-format-text[max-height], *[mm-format-text][max-height] {
           margin-left: 10px;
           color: $item-icon-accessory-color;
         }
+      }
+
+      &.mm-expand-in-fullview .mm-show-more:after {
+        content: $ionicon-var-chevron-right;
       }
 
       &:before {
@@ -1262,4 +1459,46 @@ mm-format-text[max-height], *[mm-format-text][max-height] {
       }
     }
   }
+}
+
+.item.active,
+.item.activated,
+.item-complex.active .item-content,
+.item-complex.activated .item-content,
+.item .item-content.active,
+.item .item-content.activated {
+
+  mm-format-text[max-height], *[mm-format-text][max-height] {
+    // This is to allow clicking on activated areas and have background the same color.
+    &.mm-text-formatted.mm-shortened {
+      .mm-show-more {
+        background-color: $item-default-active-bg;
+      }
+
+      &:before {
+        background: -moz-linear-gradient(top, rgba($item-default-active-bg, 0) calc(100% - 50px), $item-default-active-bg calc(100% - 15px));
+        background: -webkit-gradient(left top, left bottom, color-stop(calc(100% - 50px), rgba($item-default-active-bg, 0)), color-stop(calc(100% - 15px), $item-default-active-bg));
+        background: -webkit-linear-gradient(top, rgba($item-default-active-bg, 0) calc(100% - 50px), $item-default-active-bg calc(100% - 15px));
+        background: -o-linear-gradient(top, rgba($item-default-active-bg, 0) calc(100% - 50px), $item-default-active-bg calc(100% - 15px));
+        background: -ms-linear-gradient(top, rgba($item-default-active-bg, 0) calc(100% - 50px), $item-default-active-bg calc(100% - 15px));
+        background: linear-gradient(to bottom, rgba($item-default-active-bg, 0) calc(100% - 50px), $item-default-active-bg calc(100% - 15px));
+      }
+    }
+  }
+}
+
+// Position modals over action sheet. This means that modals will ALWAYS be over action sheet (in Ionic it's the opposite).
+.action-sheet-open .modal-backdrop.active {
+  z-index: 20;
+  .modal {
+    pointer-events: auto;
+  }
+}
+
+// Disable action sheet if loading is active.
+.action-sheet-open .backdrop-loading.active {
+  z-index: 21;
+}
+.action-sheet-open.loading-active .action-sheet-backdrop {
+  pointer-events: none;
 }

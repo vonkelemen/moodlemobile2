@@ -23,7 +23,7 @@ angular.module('mm.addons.mod_assign')
  */
 .factory('$mmaModAssignPrefetchHandler', function($mmaModAssign, mmaModAssignComponent, $mmSite, $mmFilepool, $q, $mmCourseHelper,
         $mmCourse, $mmGroups, $mmUser, $mmaModAssignSubmissionDelegate, $mmaModAssignFeedbackDelegate, $mmPrefetchFactory,
-        $mmGrades, $mmSitesManager) {
+        $mmGrades, $mmSitesManager, $mmaModAssignHelper) {
 
     var self = $mmPrefetchFactory.createPrefetchHandler(mmaModAssignComponent, false);
 
@@ -325,6 +325,7 @@ angular.module('mm.addons.mod_assign')
      * @return {Promise}         Promise resolved when done.
      */
     self.invalidateModule = function(module, courseId) {
+        // Always invalidate all the data since some assigns cannot use check updates.
         var siteId = $mmSite.getId();
         return $mmaModAssign.getAssignment(courseId, module.id, siteId).then(function(assign) {
             var promises = [];
@@ -478,7 +479,7 @@ angular.module('mm.addons.mod_assign')
                 }));
 
                 // Get list participants.
-                promises.push($mmaModAssign.listParticipants(assign.id, 0, siteId).then(function (participants) {
+                promises.push($mmaModAssignHelper.getParticipants(assign, siteId).then(function (participants) {
                     angular.forEach(participants, function(participant) {
                         if (participant.profileimageurl) {
                             $mmFilepool.addToQueueByUrl(siteId, participant.profileimageurl);
@@ -494,6 +495,7 @@ angular.module('mm.addons.mod_assign')
                 }));
             }
 
+            promises.push($mmGroups.activityHasGroups(assign.cmid));
             promises.push($mmGroups.getActivityAllowedGroups(assign.cmid, false, siteId));
 
             return $q.all(promises);
