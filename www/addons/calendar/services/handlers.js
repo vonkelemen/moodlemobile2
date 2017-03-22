@@ -64,7 +64,7 @@ angular.module('mm.addons.calendar')
              */
             return function($scope) {
                 $scope.icon = 'ion-calendar';
-                $scope.title = 'mma.calendar.calendarevents';
+                $scope.title = 'Events';
                 $scope.state = 'site.calendar';
                 $scope.class = 'mma-calendar-handler';
             };

@@ -334,7 +334,7 @@ angular.module('mm.addons.messages')
                     readChangedObserver, cronObserver;
 
                 $scope.icon = 'ion-chatbox';
-                $scope.title = 'mma.messages.messages';
+                $scope.title = 'Class chat';
                 $scope.state = 'site.messages';
                 $scope.class = 'mma-messages-handler';
 

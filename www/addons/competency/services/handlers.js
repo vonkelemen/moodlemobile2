@@ -100,7 +100,7 @@ angular.module('mm.addons.competency')
              */
             return function($scope) {
                 $scope.icon = 'ion-map';
-                $scope.title = 'mma.competency.myplans';
+                $scope.title = 'Career development plan';
                 $scope.state = 'site.learningplans';
                 $scope.class = 'mma-competency-handler';
             };
@@ -177,7 +177,7 @@ angular.module('mm.addons.competency')
              */
             return function($scope, $state) {
                 $scope.icon = 'ion-ribbon-a';
-                $scope.title = 'mma.competency.competencies';
+                $scope.title = 'Career development plan';
                 $scope.class = 'mma-competency-handler';
                 $scope.action = function($event, course) {
                     $event.preventDefault();
@@ -272,7 +272,7 @@ angular.module('mm.addons.competency')
                 $scope.class = 'mma-competency-handler';
                 if (courseId) {
                     $scope.icon = 'ion-ribbon-a';
-                    $scope.title = 'mma.competency.competencies';
+                    $scope.title = 'Career development plan';
                     $scope.action = function($event) {
                         $event.preventDefault();
                         $event.stopPropagation();

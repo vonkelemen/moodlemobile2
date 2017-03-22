@@ -69,7 +69,7 @@ angular.module('mm.addons.notifications')
                     readChangedObserver, cronObserver;
 
                 $scope.icon = 'ion-ios-bell';
-                $scope.title = 'mma.notifications.notifications';
+                $scope.title = 'Notice Board';
                 $scope.state = 'site.notifications';
                 $scope.class = 'mma-notifications-handler';
 

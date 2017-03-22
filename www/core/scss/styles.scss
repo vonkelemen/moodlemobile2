@@ -16,7 +16,7 @@
  */
 
 // Bar content.
-$bar-content-bg: #f70 !default;
+$bar-content-bg: #607D8B !default;
 $bar-content-border: transparent !default;
 $bar-content-text: #fff !default;
 
@@ -62,6 +62,167 @@ $item-input-padding: 16px !default;
 // Rich text editor.
 $mm-rte-min-height: 80px !default;
 
+//RAMP
+
+.bar-side-menu {
+    background-color: #004D40 !important;
+}
+
+.scroll-content {
+  background-color: #fafafa;
+}
+
+.mm-sidemenu-menu .item-icon-left {
+    padding-bottom: 20px;
+    padding-left: 54px;
+    padding-top: 20px;
+}
+
+.ion-ios-bell::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.ion-ios-bell {
+  background-image: url('../img/ramp/notifications.svg');
+  background-repeat: no-repeat;
+  background-position: center;   
+}
+
+.ion-ionic::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.ion-ionic {
+  background-image: url('../img/ramp/mycourses.svg');
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+.ion-home::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.ion-home {
+  background-image: url('../img/ramp/home.svg');
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+.ion-calendar::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.ion-calendar {
+  background-image: url('../img/ramp/calendar.svg');
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+.ion-map::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;  
+}
+
+.ion-map {
+  background-image: url('../img/ramp/mylearningplan.svg');
+  background-repeat: no-repeat;
+  background-position: center;  
+}
+
+.ion-log-out::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;  
+}
+
+.ion-log-out {
+  background-image: url('../img/ramp/changesite.svg');
+  background-repeat: no-repeat;
+  background-position: center;  
+}
+
+.ion-gear-b::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.ion-gear-b {
+  background-image: url('../img/ramp/appsettings.svg');
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+.ion-earth::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.ion-earth {
+  background-image: url('../img/ramp/website.svg');
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+.mm-sidemenu-menu .ion-stats-bars::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.mm-sidemenu-menu .ion-stats-bars {
+  background-image: url('../img/ramp/marks.svg');
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+.mm-sidemenu-menu .ion-chatbox::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.mm-sidemenu-menu .ion-chatbox {
+  background-image: url('../img/ramp/messages.svg');
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+.mm-sidemenu-menu .ion-folder::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.mm-sidemenu-menu .ion-folder {
+  background-image: url('../img/ramp/myfiles.svg');
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+
+// End RAMP
 /**
  * App Branding
  */

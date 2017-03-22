@@ -316,7 +316,7 @@ angular.module('mm.addons.grades')
              */
             return function($scope) {
                 $scope.icon = 'ion-stats-bars';
-                $scope.title = 'mm.grades.grades';
+                $scope.title = 'My Marks';
                 $scope.state = 'site.coursesgrades';
                 $scope.class = 'mma-grades-coursesgrades';
             };
